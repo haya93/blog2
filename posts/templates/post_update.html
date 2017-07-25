@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block head_title %}update{% endblock head_title %}
+{% block content %}
 <form method="POST" action="{% url 'posts:update' post_id=post_object.id %}"> 
 	
 	{% csrf_token %}
@@ -13,3 +11,4 @@
 
 </body>
 </html>
+{% endblock content %}

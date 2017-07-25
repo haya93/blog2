@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	{% if messages %}
-	<ul class="messages">
-		{% for message in messages %}
-		<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-		{% endfor %}
-		</ul>
-		{% endif %}
+{% extends "base.html" %}
+
+{% block head_title %}List{% endblock head_title %}
+{% block content %}
+
+	
 
 <ol>
 {% for x in post_list %}
@@ -19,6 +12,4 @@
 </ol>
 
 
-
-</body>
-</html>
+{% endblock content %}
