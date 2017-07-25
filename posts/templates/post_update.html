@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form method="POST" action="{% url 'posts:update' post_id=post_object.id %}"> 
+	
+	{% csrf_token %}
+	{{form.as_p}}
+
+<input type="submit" value="Update Post">
+
+</body>
+</html>
