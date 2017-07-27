@@ -5,6 +5,10 @@ from django.shortcuts import get_object_or_404
 from .forms import PostForms
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from urllib.parse import quote
+
+
+
 def home(request):
 	return HttpResponse("<h1> Hello world </h1>")
 
@@ -25,6 +29,7 @@ def post_detail(request, post_id):
 	
 	context = {
 		"instance": obj,
+		"share_string": quote(obj.content)
 	}
 	return render(request, 'post_detail.html', context)
 
