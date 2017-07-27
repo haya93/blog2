@@ -4,7 +4,7 @@
 	<title>create page</title>
 </head>
 <body>
-<form method="POST" action="{% url 'posts:create' %}">
+<form method="POST" action="{% url 'posts:create' %}" enctype="multipart/form-data">
 	
 	{% csrf_token %}
 	{{form.as_p}}
