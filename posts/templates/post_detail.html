@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% load urlify %}
+{% load comments %} 
+{% load crispy_forms_tags %}
+
 {% block head_title %}detail{% endblock head_title %}
 
 {% block content %}
 	
 
 <div class="row">
-<div class="col-sm-6">
+<div class="col-sm-6 col-sm-offset-3">
 	
 	 	<div class="thumbnail">
 	 	{% if x.image %}
@@ -37,6 +40,9 @@
 
         			</p>
               </div>
+              </div>
+              {% include "django_comments.html" %} 
+           
               </div>
               <a href="{% url 'posts:list' %}" class="btn btn-primary">Go back to list</a>
       </div>
